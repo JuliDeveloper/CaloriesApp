@@ -16,6 +16,7 @@
 		253B103428C3A84B0027943F /* FoodListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103328C3A84B0027943F /* FoodListTableViewController.swift */; };
 		253B103628C3AF190027943F /* DetailsFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103528C3AF190027943F /* DetailsFoodViewController.swift */; };
 		253B103828C3AFCA0027943F /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103728C3AFCA0027943F /* CustomColors.swift */; };
+		253B103A28C3BE220027943F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103928C3BE220027943F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		253B103328C3A84B0027943F /* FoodListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListTableViewController.swift; sourceTree = "<group>"; };
 		253B103528C3AF190027943F /* DetailsFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFoodViewController.swift; sourceTree = "<group>"; };
 		253B103728C3AFCA0027943F /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		253B103928C3BE220027943F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				253B101428C38C6C0027943F /* Assets.xcassets */,
 				253B101628C38C6C0027943F /* LaunchScreen.storyboard */,
 				253B103728C3AFCA0027943F /* CustomColors.swift */,
+				253B103928C3BE220027943F /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				253B102728C3935F0027943F /* StorageManager.swift in Sources */,
 				253B103828C3AFCA0027943F /* CustomColors.swift in Sources */,
 				253B103628C3AF190027943F /* DetailsFoodViewController.swift in Sources */,
+				253B103A28C3BE220027943F /* Constants.swift in Sources */,
 				253B100C28C38C6C0027943F /* AppDelegate.swift in Sources */,
 				253B102528C3907C0027943F /* FoodModel.xcdatamodeld in Sources */,
 			);
