@@ -9,6 +9,8 @@ import UIKit
 
 final class DetailsFoodViewController: UIViewController {
     
+    var food: Food!
+    
     private let foodNameTextField: UITextField = {
         let tf = UITextField()
         let spacer = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 31))
@@ -100,6 +102,8 @@ extension DetailsFoodViewController {
     }
     
     @objc private func saveFood() {
-        
+        StorageManager.shared.addFood(name: foodNameTextField.text ?? "",
+                                      calories: Double(caloriesSlider.value))
+        dismiss(animated: true)
     }
 }

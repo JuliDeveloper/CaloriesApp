@@ -11,24 +11,37 @@ private let reuseIdentifier = "cell"
 
 final class FoodListTableViewController: UITableViewController {
 
+    private var foodList: [Food] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
         setupButtonsNavBar()
+        
+        fetchData()
+        tableView.reloadData()
     }
 }
 
 // MARK: - Table view data source
 extension FoodListTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return foodList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let food = foodList[indexPath.row]
         
-
+        if #available(iOS 14.0, *) {
+            var content = cell.defaultContentConfiguration()
+            content.text = food.name
+            content.secondaryText = "\(food.calories) calories"
+        } else {
+            cell.textLabel?.text = food.name
+        }
+        
         return cell
     }
 }
@@ -63,6 +76,18 @@ extension FoodListTableViewController {
         
         navigationItem.leftBarButtonItem = self.editButtonItem
         navigationItem.leftBarButtonItem?.tintColor = CustomColors.darkGreen
+    }
+    
+    private func fetchData() {
+        StorageManager.shared.fetchFoods { result in
+            switch result {
+            case .success(let foods):
+                foodList = foods
+                print(foods)
+            case .failure(let error):
+                print("Don't fetch data, \(error.localizedDescription)")
+            }
+        }
     }
     
     @objc private func addNewFood() {

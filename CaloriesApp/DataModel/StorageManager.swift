@@ -15,7 +15,7 @@ class StorageManager: ObservableObject {
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "OrderControl")
+        let container = NSPersistentContainer(name: "FoodModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -32,6 +32,7 @@ class StorageManager: ObservableObject {
         if context.hasChanges {
             do {
                 try context.save()
+                print("Food saved!")
             } catch {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
