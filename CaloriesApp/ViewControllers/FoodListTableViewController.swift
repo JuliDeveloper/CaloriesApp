@@ -7,11 +7,10 @@
 
 import UIKit
 
-private let reuseIdentifier = "cell"
-
 final class FoodListTableViewController: UITableViewController {
 
     private var foodList: [Food] = []
+    private let reuseIdentifier = "cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +33,12 @@ extension FoodListTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let food = foodList[indexPath.row]
         
-        if #available(iOS 14.0, *) {
-            var content = cell.defaultContentConfiguration()
-            content.text = food.name
-            content.secondaryText = "\(food.calories) calories"
-        } else {
-            cell.textLabel?.text = food.name
-        }
+        var content = cell.defaultContentConfiguration()
+        content.text = food.name
+        content.secondaryText = "\(food.calories) calories"
+        cell.contentConfiguration = content
+        
+        cell.backgroundColor = CustomColors.backgroundColor
         
         return cell
     }
@@ -83,7 +81,6 @@ extension FoodListTableViewController {
             switch result {
             case .success(let foods):
                 foodList = foods
-                print(foods)
             case .failure(let error):
                 print("Don't fetch data, \(error.localizedDescription)")
             }
