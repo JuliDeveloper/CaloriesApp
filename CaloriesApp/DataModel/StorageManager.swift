@@ -5,46 +5,62 @@
 //  Created by Julia Romanenko on 03.09.2022.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 class StorageManager: ObservableObject {
-    let container = NSPersistentContainer(name: "FoodModel")
     
-    init() {
-        container.loadPersistentStores { descroption, error in
-            if let error = error {
-                print("Failed to load the data \(error.localizedDescription)")
-                
+    static let shared = StorageManager()
+    lazy var context = StorageManager.shared.persistentContainer.viewContext
+    
+    // MARK: - Core Data stack
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "OrderControl")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        saveContext()
+    }
+    
+    func saveContext() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
     
-    func save(context: NSManagedObjectContext) {
-        do {
-            try context.save()
-            print("Data saved")
-        } catch {
-            print("We could not save data")
-        }
-    }
-    
-    func addFood(name: String, calories: Double, context: NSManagedObjectContext) {
+    func addFood(name: String, calories: Double) {
         let food = Food(context: context)
         food.id = UUID()
         food.date = Date()
         food.name = name
         food.calories = calories
         
-        save(context: context)
+        saveContext()
     }
     
-    func editFood(food: Food, newName: String, newCalories: Double, context: NSManagedObjectContext) {
+    func editFood(food: Food, newName: String, newCalories: Double) {
         food.date = Date()
         food.name = newName
         food.calories = newCalories
         
-        save(context: context)
+        saveContext()
     }
     
+    func deleteFood(food: Food) {
+        context.delete(food)
+        saveContext()
+    }
+    
+    private init() {}
 }
