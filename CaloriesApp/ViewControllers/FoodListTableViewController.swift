@@ -66,6 +66,7 @@ extension FoodListTableViewController {
     }
     
     @objc private func addNewFood() {
-        
+        let detailsVC = DetailsFoodViewController()
+        present(detailsVC, animated: true)
     }
 }

@@ -11,7 +11,14 @@ class DetailsFoodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        configView()
     }
     
+}
+
+// MARK: - Private functions
+extension DetailsFoodViewController {
+    private func configView() {
+        view.backgroundColor = CustomColors.backgroundColor
+    }
 }
