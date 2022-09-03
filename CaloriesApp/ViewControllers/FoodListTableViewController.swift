@@ -9,15 +9,17 @@ import UIKit
 
 private let reuseIdentifier = "cell"
 
-class FoodListTableViewController: UITableViewController {
+final class FoodListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .orange
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
+}
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
+extension FoodListTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
@@ -29,5 +31,16 @@ class FoodListTableViewController: UITableViewController {
 
         return cell
     }
+}
 
+// MARK: - Table view data source
+extension FoodListTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+}
+
+// MARK: - Private functions
+extension FoodListTableViewController {
+    
 }
