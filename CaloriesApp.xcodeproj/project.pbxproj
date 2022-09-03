@@ -11,6 +11,9 @@
 		253B101028C38C6C0027943F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B100F28C38C6C0027943F /* ViewController.swift */; };
 		253B101528C38C6C0027943F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253B101428C38C6C0027943F /* Assets.xcassets */; };
 		253B101828C38C6C0027943F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253B101628C38C6C0027943F /* LaunchScreen.storyboard */; };
+		253B102528C3907C0027943F /* FoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 253B102328C3907C0027943F /* FoodModel.xcdatamodeld */; };
+		253B102728C3935F0027943F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B102628C3935F0027943F /* StorageManager.swift */; };
+		253B103128C39BDD0027943F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 253B103028C39BDD0027943F /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		253B101428C38C6C0027943F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		253B101728C38C6C0027943F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		253B101928C38C6C0027943F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		253B102428C3907C0027943F /* FoodModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodModel.xcdatamodel; sourceTree = "<group>"; };
+		253B102628C3935F0027943F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		253B103028C39BDD0027943F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 				253B102128C38D670027943F /* Resources */,
 				253B102228C38F200027943F /* DataModel */,
 				253B101F28C38D320027943F /* App */,
+				253B103228C39BE00027943F /* Git */,
 			);
 			path = CaloriesApp;
 			sourceTree = "<group>";
@@ -89,8 +96,18 @@
 		253B102228C38F200027943F /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				253B102328C3907C0027943F /* FoodModel.xcdatamodeld */,
+				253B102628C3935F0027943F /* StorageManager.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		253B103228C39BE00027943F /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				253B103028C39BDD0027943F /* .gitignore */,
+			);
+			path = Git;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				253B101828C38C6C0027943F /* LaunchScreen.storyboard in Resources */,
+				253B103128C39BDD0027943F /* .gitignore in Resources */,
 				253B101528C38C6C0027943F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				253B101028C38C6C0027943F /* ViewController.swift in Sources */,
+				253B102728C3935F0027943F /* StorageManager.swift in Sources */,
 				253B100C28C38C6C0027943F /* AppDelegate.swift in Sources */,
+				253B102528C3907C0027943F /* FoodModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +396,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		253B102328C3907C0027943F /* FoodModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				253B102428C3907C0027943F /* FoodModel.xcdatamodel */,
+			);
+			currentVersion = 253B102428C3907C0027943F /* FoodModel.xcdatamodel */;
+			path = FoodModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 253B100028C38C6C0027943F /* Project object */;
 }
