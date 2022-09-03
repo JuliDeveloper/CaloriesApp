@@ -64,3 +64,16 @@ class StorageManager: ObservableObject {
     
     private init() {}
 }
+
+extension StorageManager {
+    func fetchFoods(_ completion: (Result<[Food], Error>) -> (Void)) {
+        let fetchRequest = Food.fetchRequest()
+        
+        do {
+            let foods = try context.fetch(fetchRequest)
+            completion(.success(foods))
+        } catch let error {
+            completion(.failure(error))
+        }
+    }
+}
