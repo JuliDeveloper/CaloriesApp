@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		253B100C28C38C6C0027943F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B100B28C38C6C0027943F /* AppDelegate.swift */; };
-		253B100E28C38C6C0027943F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B100D28C38C6C0027943F /* SceneDelegate.swift */; };
 		253B101028C38C6C0027943F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B100F28C38C6C0027943F /* ViewController.swift */; };
-		253B101328C38C6C0027943F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253B101128C38C6C0027943F /* Main.storyboard */; };
 		253B101528C38C6C0027943F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 253B101428C38C6C0027943F /* Assets.xcassets */; };
 		253B101828C38C6C0027943F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 253B101628C38C6C0027943F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		253B100828C38C6C0027943F /* CaloriesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaloriesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		253B100B28C38C6C0027943F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		253B100D28C38C6C0027943F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		253B100F28C38C6C0027943F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		253B101228C38C6C0027943F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		253B101428C38C6C0027943F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		253B101728C38C6C0027943F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		253B101928C38C6C0027943F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +52,45 @@
 		253B100A28C38C6C0027943F /* CaloriesApp */ = {
 			isa = PBXGroup;
 			children = (
-				253B100B28C38C6C0027943F /* AppDelegate.swift */,
-				253B100D28C38C6C0027943F /* SceneDelegate.swift */,
-				253B100F28C38C6C0027943F /* ViewController.swift */,
-				253B101128C38C6C0027943F /* Main.storyboard */,
-				253B101428C38C6C0027943F /* Assets.xcassets */,
-				253B101628C38C6C0027943F /* LaunchScreen.storyboard */,
-				253B101928C38C6C0027943F /* Info.plist */,
+				253B102028C38D4F0027943F /* ViewControllers */,
+				253B102128C38D670027943F /* Resources */,
+				253B102228C38F200027943F /* DataModel */,
+				253B101F28C38D320027943F /* App */,
 			);
 			path = CaloriesApp;
+			sourceTree = "<group>";
+		};
+		253B101F28C38D320027943F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				253B100B28C38C6C0027943F /* AppDelegate.swift */,
+				253B101928C38C6C0027943F /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		253B102028C38D4F0027943F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				253B100F28C38C6C0027943F /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		253B102128C38D670027943F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				253B101428C38C6C0027943F /* Assets.xcassets */,
+				253B101628C38C6C0027943F /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		253B102228C38F200027943F /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +153,6 @@
 			files = (
 				253B101828C38C6C0027943F /* LaunchScreen.storyboard in Resources */,
 				253B101528C38C6C0027943F /* Assets.xcassets in Resources */,
-				253B101328C38C6C0027943F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +165,12 @@
 			files = (
 				253B101028C38C6C0027943F /* ViewController.swift in Sources */,
 				253B100C28C38C6C0027943F /* AppDelegate.swift in Sources */,
-				253B100E28C38C6C0027943F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		253B101128C38C6C0027943F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				253B101228C38C6C0027943F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		253B101628C38C6C0027943F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,12 +305,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DWMGJ928Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CaloriesApp/Info.plist;
+				INFOPLIST_FILE = CaloriesApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +321,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +334,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DWMGJ928Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CaloriesApp/Info.plist;
+				INFOPLIST_FILE = CaloriesApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +350,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
