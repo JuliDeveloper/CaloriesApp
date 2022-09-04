@@ -102,8 +102,15 @@ extension DetailsFoodViewController {
     }
     
     @objc private func saveFood() {
-        StorageManager.shared.addFood(name: foodNameTextField.text ?? "",
-                                      calories: Double(caloriesSlider.value))
+        if food == nil {
+            StorageManager.shared.addFood(name: foodNameTextField.text ?? "",
+                                          calories: Double(caloriesSlider.value))
+        } else {
+            StorageManager.shared.editFood(food: food,
+                                           newName: foodNameTextField.text ?? "",
+                                           newCalories: Double(caloriesSlider.value))
+        }
+        
         dismiss(animated: true)
     }
 }

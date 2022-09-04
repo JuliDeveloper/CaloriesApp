@@ -46,7 +46,12 @@ extension FoodListTableViewController {
 // MARK: - Table view data source
 extension FoodListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let food = foodList[indexPath.row]
         
+        let detailsVC = DetailsFoodViewController()
+        detailsVC.food = food
+
+        present(detailsVC, animated: true)
     }
 }
 

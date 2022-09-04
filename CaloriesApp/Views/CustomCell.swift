@@ -47,6 +47,7 @@ class CustomCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = CustomColors.backgroundColor
+        selectionStyle = .none
         
         configGeneralStack()
     }
