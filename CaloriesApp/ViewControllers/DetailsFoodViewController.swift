@@ -44,7 +44,7 @@ final class DetailsFoodViewController: UIViewController {
     
     private lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Done", for: .normal)
+        button.setTitle("Save", for: .normal)
         button.backgroundColor = CustomColors.darkGreen
         button.layer.cornerRadius = Constants.radius
         button.translatesAutoresizingMaskIntoConstraints = false
