@@ -120,7 +120,7 @@ extension DetailsFoodViewController {
                                            newCalories: Double(caloriesSlider.value))
         }
         delegate?.reloadData()
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func changeValue() {
