@@ -19,6 +19,7 @@
 		253B103A28C3BE220027943F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103928C3BE220027943F /* Constants.swift */; };
 		253B103D28C4CBC00027943F /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103C28C4CBC00027943F /* TimeFormatting.swift */; };
 		253B104028C4CF1A0027943F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103F28C4CF1A0027943F /* CustomCell.swift */; };
+		253B104228C511340027943F /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B104128C511340027943F /* CustomHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		253B103928C3BE220027943F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		253B103C28C4CBC00027943F /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
 		253B103F28C4CF1A0027943F /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		253B104128C511340027943F /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				253B103F28C4CF1A0027943F /* CustomCell.swift */,
+				253B104128C511340027943F /* CustomHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				253B103A28C3BE220027943F /* Constants.swift in Sources */,
 				253B100C28C38C6C0027943F /* AppDelegate.swift in Sources */,
 				253B102528C3907C0027943F /* FoodModel.xcdatamodeld in Sources */,
+				253B104228C511340027943F /* CustomHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

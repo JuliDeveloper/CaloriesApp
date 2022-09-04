@@ -9,8 +9,7 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     
-    let titleTextLabel: UILabel =
-    {
+    let titleTextLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .black

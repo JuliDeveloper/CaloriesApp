@@ -14,7 +14,9 @@ protocol FoodViewControllerDelegate {
 final class FoodListTableViewController: UITableViewController {
 
     private var foodList: [Food] = []
-    private let reuseIdentifier = "cell"
+    
+    private let cellIdentifier = "cell"
+    private let headerIdentifier = "header"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +29,21 @@ final class FoodListTableViewController: UITableViewController {
 
 // MARK: - Table view data source
 extension FoodListTableViewController {
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerIdentifier) as? CustomHeader else { return UITableViewHeaderFooterView() }
+        view.titleLabel.text = "\(Int(totalCaloriesToday())) Kcal (Today)"
+        tableView.reloadSections([0,0], with: .automatic)
+        return view
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foodList.count
     }
 
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CustomCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CustomCell else { return UITableViewCell() }
         let food = foodList[indexPath.row]
         
         guard let dateFood = food.date else { return UITableViewCell() }
@@ -81,7 +91,10 @@ extension FoodListTableViewController {
         ]
         
         view.backgroundColor = CustomColors.backgroundColor
-        tableView.register(CustomCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(CustomCell.self,
+                           forCellReuseIdentifier: cellIdentifier)
+        tableView.register(CustomHeader.self,
+               forHeaderFooterViewReuseIdentifier: headerIdentifier)
         
         tableView.separatorColor = CustomColors.darkGreen
     }
@@ -104,6 +117,18 @@ extension FoodListTableViewController {
                 print("Don't fetch data, \(error.localizedDescription)")
             }
         }
+    }
+    
+    private func totalCaloriesToday() -> Double {
+        var caloriesToday: Double = 0
+        
+        for food in foodList {
+            if Calendar.current.isDateInToday(food.date ?? Date()) {
+                caloriesToday += food.calories
+            }
+        }
+        
+        return caloriesToday
     }
     
     @objc private func addNewFood() {
