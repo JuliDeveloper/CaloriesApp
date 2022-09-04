@@ -104,9 +104,6 @@ extension FoodListTableViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewFood))
         addButton.tintColor = CustomColors.darkGreen
         navigationController?.navigationBar.topItem?.rightBarButtonItem = addButton
-        
-        navigationItem.leftBarButtonItem = self.editButtonItem
-        navigationItem.leftBarButtonItem?.tintColor = CustomColors.darkGreen
     }
     
     private func fetchData() {
