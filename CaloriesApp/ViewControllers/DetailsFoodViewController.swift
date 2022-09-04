@@ -13,7 +13,7 @@ final class DetailsFoodViewController: UIViewController {
     var food: Food?
     var delegate: FoodViewControllerDelegate?
     
-    private let foodNameTextField: UITextField = {
+    let foodNameTextField: UITextField = {
         let tf = UITextField()
         let spacer = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 31))
         tf.leftView = spacer
@@ -27,12 +27,7 @@ final class DetailsFoodViewController: UIViewController {
         return tf
     }()
     
-    private let caloriesLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
-    private lazy var caloriesSlider: UISlider = {
+    lazy var caloriesSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 1000
@@ -41,6 +36,11 @@ final class DetailsFoodViewController: UIViewController {
         slider.thumbTintColor = CustomColors.middleGreen
         slider.addTarget(self, action: #selector(changeValue), for: .allTouchEvents)
         return slider
+    }()
+    
+    private let caloriesLabel: UILabel = {
+        let label = UILabel()
+        return label
     }()
     
     private lazy var saveButton: UIButton = {

@@ -53,6 +53,8 @@ extension FoodListTableViewController {
         
         let detailsVC = DetailsFoodViewController()
         detailsVC.food = food
+        detailsVC.foodNameTextField.text = food.name
+        detailsVC.caloriesSlider.value = Float(food.calories)
         detailsVC.delegate = self
 
         present(detailsVC, animated: true)
