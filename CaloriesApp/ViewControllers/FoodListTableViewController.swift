@@ -13,7 +13,7 @@ protocol FoodViewControllerDelegate {
 
 final class FoodListTableViewController: UITableViewController {
 
-    private var foodList: [Food] = []
+    var foodList: [Food] = []
     
     private let cellIdentifier = "cell"
     private let headerIdentifier = "header"
@@ -67,7 +67,7 @@ extension FoodListTableViewController {
         detailsVC.caloriesSlider.value = Float(food.calories)
         detailsVC.delegate = self
 
-        present(detailsVC, animated: true)
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -134,7 +134,7 @@ extension FoodListTableViewController {
     @objc private func addNewFood() {
         let detailsVC = DetailsFoodViewController()
         detailsVC.delegate = self
-        present(detailsVC, animated: true)
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 

@@ -57,6 +57,8 @@ final class DetailsFoodViewController: UIViewController {
         super.viewDidLoad()
         configView()
         setupVerticalStackView()
+        title = "Add food"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
 }
@@ -66,6 +68,11 @@ extension DetailsFoodViewController {
     private func configView() {
         view.backgroundColor = CustomColors.backgroundColor
         caloriesLabel.text = "Calories: \(Int(caloriesSlider.value))"
+        
+        let backButton = UIBarButtonItem()
+        backButton.tintColor = CustomColors.darkGreen
+        backButton.title = "Back"
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     private func setupCaloriesStackView() -> UIStackView {
@@ -97,7 +104,7 @@ extension DetailsFoodViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
