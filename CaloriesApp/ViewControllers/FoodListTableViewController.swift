@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FoodViewControllerDelegate {
+    func reloadData()
+}
+
 final class FoodListTableViewController: UITableViewController {
 
     private var foodList: [Food] = []
@@ -18,7 +22,6 @@ final class FoodListTableViewController: UITableViewController {
         setupButtonsNavBar()
         
         fetchData()
-        tableView.reloadData()
     }
 }
 
@@ -50,15 +53,17 @@ extension FoodListTableViewController {
         
         let detailsVC = DetailsFoodViewController()
         detailsVC.food = food
+        detailsVC.delegate = self
 
         present(detailsVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let food = foodList[indexPath.row]
         if editingStyle == .delete {
             foodList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            StorageManager.shared.deleteFood(food: foodList[indexPath.row])
+            StorageManager.shared.deleteFood(food: food)
         }
     }
 }
@@ -101,6 +106,14 @@ extension FoodListTableViewController {
     
     @objc private func addNewFood() {
         let detailsVC = DetailsFoodViewController()
+        detailsVC.delegate = self
         present(detailsVC, animated: true)
+    }
+}
+
+extension FoodListTableViewController: FoodViewControllerDelegate {
+    func reloadData() {
+        fetchData()
+        tableView.reloadData()
     }
 }

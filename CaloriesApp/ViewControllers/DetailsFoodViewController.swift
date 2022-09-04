@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 final class DetailsFoodViewController: UIViewController {
-    
-    var food: Food!
+
+    var food: Food?
+    var delegate: FoodViewControllerDelegate?
     
     private let foodNameTextField: UITextField = {
         let tf = UITextField()
@@ -107,11 +109,11 @@ extension DetailsFoodViewController {
             StorageManager.shared.addFood(name: foodNameTextField.text ?? "",
                                           calories: Double(caloriesSlider.value))
         } else {
-            StorageManager.shared.editFood(food: food,
+            StorageManager.shared.editFood(food: food ?? Food(),
                                            newName: foodNameTextField.text ?? "",
                                            newCalories: Double(caloriesSlider.value))
         }
-        
+        delegate?.reloadData()
         dismiss(animated: true)
     }
     
