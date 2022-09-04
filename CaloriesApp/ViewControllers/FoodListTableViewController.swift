@@ -39,6 +39,7 @@ extension FoodListTableViewController {
         cell.contentConfiguration = content
         
         cell.backgroundColor = CustomColors.backgroundColor
+        cell.selectionStyle = .none
         
         return cell
     }
