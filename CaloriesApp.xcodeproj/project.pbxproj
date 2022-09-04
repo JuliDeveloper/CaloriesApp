@@ -18,6 +18,7 @@
 		253B103828C3AFCA0027943F /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103728C3AFCA0027943F /* CustomColors.swift */; };
 		253B103A28C3BE220027943F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103928C3BE220027943F /* Constants.swift */; };
 		253B103D28C4CBC00027943F /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103C28C4CBC00027943F /* TimeFormatting.swift */; };
+		253B104028C4CF1A0027943F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253B103F28C4CF1A0027943F /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		253B103728C3AFCA0027943F /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		253B103928C3BE220027943F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		253B103C28C4CBC00027943F /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
+		253B103F28C4CF1A0027943F /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		253B100A28C38C6C0027943F /* CaloriesApp */ = {
 			isa = PBXGroup;
 			children = (
+				253B103E28C4CF070027943F /* Views */,
 				253B102028C38D4F0027943F /* ViewControllers */,
 				253B102228C38F200027943F /* DataModel */,
 				253B103B28C4CB970027943F /* Helpers */,
@@ -128,6 +131,14 @@
 				253B103C28C4CBC00027943F /* TimeFormatting.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		253B103E28C4CF070027943F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				253B103F28C4CF1A0027943F /* CustomCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				253B103D28C4CBC00027943F /* TimeFormatting.swift in Sources */,
 				253B102728C3935F0027943F /* StorageManager.swift in Sources */,
 				253B103828C3AFCA0027943F /* CustomColors.swift in Sources */,
+				253B104028C4CF1A0027943F /* CustomCell.swift in Sources */,
 				253B103628C3AF190027943F /* DetailsFoodViewController.swift in Sources */,
 				253B103A28C3BE220027943F /* Constants.swift in Sources */,
 				253B100C28C38C6C0027943F /* AppDelegate.swift in Sources */,

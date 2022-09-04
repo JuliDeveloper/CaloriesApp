@@ -30,16 +30,14 @@ extension FoodListTableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CustomCell
         let food = foodList[indexPath.row]
         
-        var content = cell.defaultContentConfiguration()
-        content.text = food.name
-        content.secondaryText = "\(food.calories) calories"
-        cell.contentConfiguration = content
-        
-        cell.backgroundColor = CustomColors.backgroundColor
-        cell.selectionStyle = .none
+        guard let dateFood = food.date else { return UITableViewCell() }
+            
+        cell.titleTextLabel.text = food.name
+        cell.caloriesLabel.text = "\(Int(food.calories))"
+        cell.dateTextLabel.text = calcTimeSinse(date: dateFood)
         
         return cell
     }
@@ -63,7 +61,7 @@ extension FoodListTableViewController {
         ]
         
         view.backgroundColor = CustomColors.backgroundColor
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(CustomCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         tableView.separatorColor = CustomColors.darkGreen
     }
