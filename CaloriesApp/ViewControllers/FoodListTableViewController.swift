@@ -53,6 +53,14 @@ extension FoodListTableViewController {
 
         present(detailsVC, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            foodList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            StorageManager.shared.deleteFood(food: foodList[indexPath.row])
+        }
+    }
 }
 
 // MARK: - Private functions
