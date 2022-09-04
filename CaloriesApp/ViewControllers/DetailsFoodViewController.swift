@@ -27,17 +27,17 @@ final class DetailsFoodViewController: UIViewController {
     
     private let caloriesLabel: UILabel = {
         let label = UILabel()
-        label.text = "Calories: "
         return label
     }()
     
-    private let caloriesSlider: UISlider = {
+    private lazy var caloriesSlider: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 1000
         slider.value = 100
         slider.tintColor = CustomColors.darkGreen
         slider.thumbTintColor = CustomColors.middleGreen
+        slider.addTarget(self, action: #selector(changeValue), for: .allTouchEvents)
         return slider
     }()
     
@@ -64,6 +64,7 @@ final class DetailsFoodViewController: UIViewController {
 extension DetailsFoodViewController {
     private func configView() {
         view.backgroundColor = CustomColors.backgroundColor
+        caloriesLabel.text = "Calories: \(Int(caloriesSlider.value))"
     }
     
     private func setupCaloriesStackView() -> UIStackView {
@@ -112,5 +113,12 @@ extension DetailsFoodViewController {
         }
         
         dismiss(animated: true)
+    }
+    
+    @objc private func changeValue() {
+        let step: Float = 10
+        let currentValue = round(caloriesSlider.value / step) * step
+        caloriesLabel.text = "Calories: \(Int(currentValue))"
+        print(currentValue)
     }
 }
