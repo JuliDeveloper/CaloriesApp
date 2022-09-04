@@ -37,6 +37,15 @@ final class DetailsFoodViewController: UIViewController {
         return slider
     }()
     
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Add food"
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.textColor = CustomColors.darkGreen
+        label.textAlignment = .center
+        return label
+    }()
+    
     private let caloriesLabel: UILabel = {
         let label = UILabel()
         return label
@@ -56,9 +65,16 @@ final class DetailsFoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
+        
+        view.addSubview(titleLabel)
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
         setupVerticalStackView()
-        title = "Add food"
-        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
 }
@@ -104,7 +120,7 @@ extension DetailsFoodViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stack.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
@@ -120,7 +136,7 @@ extension DetailsFoodViewController {
                                            newCalories: Double(caloriesSlider.value))
         }
         delegate?.reloadData()
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
     
     @objc private func changeValue() {

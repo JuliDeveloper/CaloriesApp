@@ -65,9 +65,10 @@ extension FoodListTableViewController {
         detailsVC.food = food
         detailsVC.foodNameTextField.text = food.name
         detailsVC.caloriesSlider.value = Float(food.calories)
+        detailsVC.titleLabel.text = "Edit food"
         detailsVC.delegate = self
 
-        navigationController?.pushViewController(detailsVC, animated: true)
+        present(detailsVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -133,8 +134,9 @@ extension FoodListTableViewController {
     
     @objc private func addNewFood() {
         let detailsVC = DetailsFoodViewController()
+        detailsVC.titleLabel.text = "Add food"
         detailsVC.delegate = self
-        navigationController?.pushViewController(detailsVC, animated: true)
+        present(detailsVC, animated: true)
     }
 }
 
